@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b6b50">
+  <meta name="description" content="শ্রীনগর টু জয়পাড়া এক্সপ্রেস — এলাকার মানুষ, তথ্য ও সেবার একটি কমিউনিটি প্ল্যাটফর্ম।">
+  <title>শ্রীনগর টু জয়পাড়া এক্সপ্রেস</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <div class="welcome-screen" id="welcomeScreen" aria-label="স্বাগতম">
+    <div class="welcome-orb orb-one"></div><div class="welcome-orb orb-two"></div>
+    <div class="welcome-card">
+      <div class="welcome-logo">শ্রীনগর <span>↔</span> জয়পাড়া</div>
+      <div class="photo-wrap">
+        <div class="photo-placeholder" id="photoPlaceholder" aria-label="আপনার ছবি">
+          <span class="photo-icon">📷</span><span>আপনার ছবি যোগ করুন</span>
+        </div>
+        <img id="welcomePhoto" alt="স্বাগতম স্ক্রিনের ছবি" hidden>
+        <label class="photo-upload" for="photoInput">＋ ছবি দিন</label>
+        <input type="file" id="photoInput" accept="image/*" hidden>
+      </div>
+      <p class="welcome-eyebrow">একটি এলাকার · একটি পরিবার</p>
+      <h1>আসসালামু আলাইকুম</h1>
+      <p class="welcome-title">শ্রীনগর টু জয়পাড়া এক্সপ্রেসে স্বাগতম</p>
+      <p class="welcome-sub">আপনার এলাকার তথ্য, মানুষ ও সেবার ডিজিটাল ঠিকানা</p>
+      <div class="welcome-actions">
+        <button class="btn btn-light" id="enterSite">ওয়েবসাইটে প্রবেশ করুন <span>→</span></button>
+        <button class="sound-btn" id="welcomeVoice" type="button">🔊 স্বাগতম বার্তা শুনুন</button>
+      </div>
+      <small class="welcome-note">ছবি নির্বাচন করলে এই ব্রাউজারেই প্রিভিউ দেখা যাবে।</small>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="হোম">
+      <span class="brand-mark">শ↔জ</span>
+      <span class="brand-text"><strong>শ্রীনগর টু জয়পাড়া</strong><small>এক্সপ্রেস · আমাদের এলাকার প্ল্যাটফর্ম</small></span>
+    </a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="মেনু খুলুন">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a class="active" href="#home">হোম</a>
+      <a href="#services">সেবাসমূহ</a>
+      <a href="#map-section">মানচিত্র</a>
+      <a href="#community">কমিউনিটি</a>
+      <a href="#vote-section">ভোট</a>
+    </nav>
+    <button class="btn btn-primary header-cta" id="headerWelcome">স্বাগতম স্ক্রিন</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="pill"><span class="pulse"></span> আমাদের শ্রীনগর · আমাদের জয়পাড়া</div>
+        <h1>এলাকার মানুষ,<br><span>এক প্ল্যাটফর্মে।</span></h1>
+        <p>স্থানীয় তথ্য, কমিউনিটি পোস্ট, রক্তদাতা, জরুরি যোগাযোগ এবং এলাকার নানা সেবা—সবকিছু সহজে খুঁজে নিন এক জায়গায়।</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">সেবাগুলো দেখুন <span>→</span></a>
+          <a class="btn btn-outline" href="#community">কমিউনিটিতে যান</a>
+        </div>
+        <div class="hero-trust"><span class="trust-icon">✦</span><span><b>এলাকার জন্য তৈরি</b><small>মানুষের সংযোগ ও সহযোগিতার ডিজিটাল উদ্যোগ</small></span></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-topline"><span>COMMUNITY CONNECT</span><span>● LIVE DEMO</span></div>
+        <div class="landscape">
+          <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="river"></div>
+          <div class="bridge"><i></i><i></i><i></i><i></i></div>
+          <div class="village-house house-one"><b></b></div><div class="village-house house-two"><b></b></div>
+          <div class="tree tree-one"></div><div class="tree tree-two"></div><div class="tree tree-three"></div>
+        </div>
+        <div class="floating-card float-a"><span class="float-icon green">♡</span><span><b>রক্তদাতা</b><small>মানুষ মানুষের পাশে</small></span></div>
+        <div class="floating-card float-b"><span class="float-icon orange">⌖</span><span><b>এলাকার মানচিত্র</b><small>স্থান চিনুন সহজে</small></span></div>
+        <div class="hero-art-footer"><span>শ্রীনগর থেকে জয়পাড়া</span><span>বাংলাদেশ 🇧🇩</span></div>
+      </div>
+    </section>
+
+    <section class="prayer-banner section" id="prayerBanner">
+      <div class="prayer-symbol">☾</div>
+      <div class="prayer-copy"><span class="eyebrow">নামাজের প্রস্তুতি</span><h2>হে ভাই ও বোনেরা, নামাজের জন্য প্রস্তুতি নাও। একটু পরেই আযান হবে।</h2><p>এটি ডেমো বার্তা। লাইভ ব্যবহারে সঠিক স্থানীয় নামাজের সময় সংযুক্ত করতে হবে।</p></div>
+      <button class="prayer-dismiss" id="dismissPrayer" aria-label="বার্তা বন্ধ করুন">×</button>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading"><div><span class="eyebrow">আপনার প্রয়োজনীয় সেবা</span><h2>এক জায়গায়, অনেক সুবিধা</h2></div><span class="heading-note">কমিউনিটির জন্য তৈরি</span></div>
+      <div class="service-grid">
+        <a class="service-card service-feature" href="#vote-section"><span class="service-icon">🪪</span><span class="service-tag">ডিজিটাল</span><h3>ডিজিটাল আইডি কার্ড</h3><p>সদস্য পরিচিতি ও ডিজিটাল কার্ডের ধারণামূলক প্রিভিউ।</p><span class="card-link">দেখুন ↗</span></a>
+        <a class="service-card" href="#community"><span class="service-icon blue">📜</span><h3>অটো সার্টিফিকেট</h3><p>ভবিষ্যতে তথ্য দিয়ে সার্টিফিকেট তৈরির সুবিধা।</p><span class="card-link">বিস্তারিত ↗</span></a>
+        <a class="service-card" href="#map-section"><span class="service-icon orange">🗺️</span><h3>এলাকার মানচিত্র</h3><p>শ্রীনগর ও জয়পাড়া এলাকার অবস্থান দেখুন।</p><span class="card-link">মানচিত্র দেখুন ↗</span></a>
+        <a class="service-card" href="#blood"><span class="service-icon red">🩸</span><h3>রক্তদাতা খুঁজুন</h3><p>রক্তের প্রয়োজনে স্বেচ্ছাসেবী দাতার তথ্য খোঁজার ডেমো।</p><span class="card-link">দাতা খুঁজুন ↗</span></a>
+        <a class="service-card" href="#community"><span class="service-icon purple">💬</span><h3>কমিউনিটি পোস্ট</h3><p>এলাকার খবর, সাহায্যের আবেদন ও ইতিবাচক উদ্যোগ শেয়ার করুন।</p><span class="card-link">পোস্ট দেখুন ↗</span></a>
+        <a class="service-card" href="#vote-section"><span class="service-icon gold">🗳️</span><h3>অ্যাডমিন ভোট</h3><p>অ্যাডমিন তৈরি করা জরিপে অংশ নেওয়ার ডেমো।</p><span class="card-link">ভোট দিন ↗</span></a>
+      </div>
+    </section>
+
+    <section class="section map-section" id="map-section">
+      <div class="section-heading"><div><span class="eyebrow">আপনার এলাকার সংযোগ</span><h2>শ্রীনগর ↔ জয়পাড়া</h2><p class="section-desc">মানচিত্রে ঘুরে দেখুন। অবস্থান ও সেবার তথ্য পরে অ্যাডমিন যোগ করতে পারবেন।</p></div><span class="map-badge">⌖ মানচিত্র ডেমো</span></div>
+      <div id="map" class="map-frame"><div class="map-fallback">মানচিত্র লোড হচ্ছে…</div></div>
+      <div class="map-caption"><span><i class="legend-dot"></i> শ্রীনগর, মুন্সিগঞ্জ</span><span><i class="legend-dot orange-dot"></i> জয়পাড়া, দোহার</span><small>ইন্টারনেট সংযোগ প্রয়োজন</small></div>
+    </section>
+
+    <section class="section community-section" id="community">
+      <div class="section-heading"><div><span class="eyebrow">এলাকার কণ্ঠস্বর</span><h2>কমিউনিটি বোর্ড</h2><p class="section-desc">এটি সামনের দিকের ডেমো; এখানে পোস্ট এই ব্রাউজারে অস্থায়ীভাবে সংরক্ষিত হবে।</p></div><span class="online-badge"><i></i> কমিউনিটি</span></div>
+      <div class="community-layout">
+        <div class="post-composer">
+          <div class="composer-top"><div class="avatar">আ</div><div><b>আপনার কথা শেয়ার করুন</b><small>সবার সঙ্গে ভালো কিছু ভাগ করে নিন</small></div></div>
+          <textarea id="postText" placeholder="আপনার এলাকার জন্য কোনো তথ্য বা উদ্যোগ আছে? লিখুন…"></textarea>
+          <div class="composer-bottom"><span>♡ ইতিবাচক ও সম্মানজনক থাকুন</span><button class="btn btn-primary" id="publishPost">পোস্ট করুন ↑</button></div>
+        </div>
+        <div class="post-list" id="postList">
+          <article class="community-post"><div class="post-head"><div class="avatar avatar-soft">শ</div><div><b>শ্রীনগর টু জয়পাড়া এক্সপ্রেস</b><small>স্বাগতম বার্তা · ডেমো পোস্ট</small></div><span class="post-menu">•••</span></div><p>এলাকার মানুষের তথ্য, সহযোগিতা ও ভালো উদ্যোগ একসঙ্গে তুলে ধরাই আমাদের লক্ষ্য।</p><div class="post-actions"><span>♡ ভালো লাগলে শেয়ার করুন</span><span>কমিউনিটি উদ্যোগ</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split-section" id="blood">
+      <div class="blood-card"><div class="blood-art">🩸</div><div><span class="eyebrow">মানবতার সেবা</span><h2>রক্তদাতা খুঁজছেন?</h2><p>জরুরি সময়ে রক্তদাতার সঙ্গে যোগাযোগের তথ্যভিত্তিক একটি সেবা গড়ে তোলার পরিকল্পনা।</p><button class="btn btn-light" id="bloodInfoBtn">ডেমো তথ্য দেখুন</button></div></div>
+      <div class="notice-card"><span class="notice-icon">🔒</span><span class="eyebrow">নিরাপত্তা আগে</span><h3>আপনার তথ্য, আপনার নিয়ন্ত্রণে</h3><p>বাস্তব সাইটে ব্যক্তিগত তথ্য প্রকাশের আগে সম্মতি, নিরাপদ লগইন এবং অ্যাডমিন যাচাই যুক্ত করা জরুরি।</p><a href="#footer">গোপনীয়তা সম্পর্কে ↓</a></div>
+    </section>
+
+    <section class="section vote-section" id="vote-section">
+      <div class="section-heading"><div><span class="eyebrow">আপনার মতামত গুরুত্বপূর্ণ</span><h2>কমিউনিটি ভোট</h2><p class="section-desc">এই ডেমোতে অ্যাডমিন মোড দিয়ে নমুনা ভোট তৈরি করা যায়। বাস্তব সাইটে সার্ভার-ভিত্তিক লগইন প্রয়োজন।</p></div><span class="vote-mark">✳</span></div>
+      <div class="vote-layout">
+        <div class="poll-card"><div class="poll-top"><span class="live-label">নমুনা ভোট</span><span>১টি ভোট/ব্যবহারকারী (ডেমো)</span></div><h3 id="pollQuestion">আমাদের এলাকার কোন উদ্যোগটি আগে নেওয়া উচিত?</h3><form id="pollForm"><label class="poll-option"><input type="radio" name="poll" value="পরিচ্ছন্নতা অভিযান"><span>পরিচ্ছন্নতা অভিযান</span></label><label class="poll-option"><input type="radio" name="poll" value="রক্তদাতা নেটওয়ার্ক"><span>রক্তদাতা নেটওয়ার্ক</span></label><label class="poll-option"><input type="radio" name="poll" value="শিক্ষা সহায়তা"><span>শিক্ষা সহায়তা</span></label><button class="btn btn-primary full-btn" type="submit">আমার ভোট দিন</button></form><div id="pollResults" class="poll-results" hidden></div><p class="tiny-note" id="pollNotice">এটি শুধু ব্রাউজার-ভিত্তিক ডেমো, প্রকৃত ভোট নয়।</p></div>
+        <div class="admin-card"><div class="admin-lock">⚙</div><span class="eyebrow">শুধু অ্যাডমিন</span><h3>ভোট পরিচালনা</h3><p>প্রোটোটাইপে নমুনা অ্যাডমিন প্যানেল। নিরাপদ অ্যাডমিন লগইন না থাকায় লাইভে সংবেদনশীল তথ্য ব্যবহার করবেন না।</p><button class="btn btn-outline full-btn" id="adminToggle">ডেমো অ্যাডমিন প্যানেল খুলুন</button><form id="adminForm" hidden><label for="adminQuestion">নতুন ভোটের প্রশ্ন</label><input id="adminQuestion" maxlength="140" placeholder="প্রশ্ন লিখুন"><label for="adminOption1">বিকল্প ১</label><input id="adminOption1" maxlength="80" placeholder="প্রথম উত্তর"><label for="adminOption2">বিকল্প ২</label><input id="adminOption2" maxlength="80" placeholder="দ্বিতীয় উত্তর"><button class="btn btn-primary full-btn" type="submit">ডেমো ভোট তৈরি করুন</button></form></div>
+      </div>
+    </section>
+
+    <section class="section closing-cta"><div><span class="eyebrow">একসঙ্গে এগিয়ে চলি</span><h2>আমাদের এলাকা, আমাদের গর্ব।</h2><p>শ্রীনগর টু জয়পাড়া এক্সপ্রেস—মানুষের সঙ্গে মানুষের সংযোগ।</p></div><a class="btn btn-light" href="#home">শুরুতে ফিরে যান ↑</a></section>
+  </main>
+
+  <footer id="footer" class="site-footer"><div class="footer-main"><a class="brand footer-brand" href="#home"><span class="brand-mark">শ↔জ</span><span class="brand-text"><strong>শ্রীনগর টু জয়পাড়া</strong><small>এক্সপ্রেস</small></span></a><p>এলাকার তথ্য, সেবা ও মানুষের সংযোগের একটি কমিউনিটি উদ্যোগ।</p><a href="#footer" class="privacy-link" id="privacyBtn">গোপনীয়তা ও নিরাপত্তা</a></div><div class="footer-bottom"><span>© <span id="year"></span> শ্রীনগর টু জয়পাড়া এক্সপ্রেস। সর্বস্বত্ব সংরক্ষিত।</span><span>ভালোবাসা দিয়ে তৈরি · কমিউনিটির জন্য</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
